@@ -3,22 +3,21 @@ import { connect, dispatch } from 'react-redux';
 import { fetchCourses } from '../actions';
 
 class CourseLibrary extends Component {
-    
+
     constructor(props) {
         super(props)
 
         this.renderCourse = this.renderCourse.bind(this);
-
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchCourses()
     }
 
     renderCourse(course) {
-        return ( 
+        return (
         <li key={course.title} className="course">
-            <div className="course_info">
+            <div className="course__info">
                 <div className="course__title-container">
                     <div className="course__title">{course.title}</div>
                 </div>
@@ -32,18 +31,20 @@ class CourseLibrary extends Component {
     }
 
     render() {
-        return (
+        return ( 
             <ul>
-                
+
+                {/* {alert(JSON.stringify())} */}
                 {this.props.courses.map(this.renderCourse)}
             </ul>
         )
     }
-    
+
 }
 
+
 function mapStateToProps(state) {
-    console.log(`state courses are: ${JSON.stringify(state)}`)
+    console.log(`state courses are : ${JSON.stringify(state.courses)}`)
     return { courses: state.courses }
 }
 

@@ -1,6 +1,5 @@
 @import 'components/schedule';
 
-
 .main-container {
     display: flex;
     justify-content: center;
@@ -10,37 +9,9 @@
 
 .library {
     flex-grow: 2;
-    width: 62%;
-    max-width: 62%;
-    height: 100vh;
+    width: 70%;
     padding: 6rem;
     z-index: 1;
-    position: absolute;
-    left: 0;
-
-}
-
-
-
-.schedule {
-    flex-grow: 1;
-    background: linear-gradient(118.95deg, #6F48CE 0%, #32CBE8 100%);
-    width: 38%;
-    height: 100vh;
-    text-align: center;
-    padding: 12rem 6rem;
-    position: fixed;
-    right: 0;
-}
-
-
-.schedule__header {
-    border: none;
-    border-left: 1px solid white;
-    color:white;
-    font-size: 20px;
-    font-family: 'Alegreya', serif;
-    line-height: 27px;
 }
 
 .library__header {
@@ -48,21 +19,25 @@
     border-left: 1px solid #487bce;
     color: #487bce;
     padding: 0 25px;
-    font-family: 'Alegreya', serif;
+    font-family: Alegreya, serif;
     font-size: 34px;
     font-weight: bold;
     line-height: 47px;
 }
 
+.schedule {
+    flex-grow: 1;
+    width: 30%;
+    background: linear-gradient(118.95deg, #6F48CE 0%, #32CBE8 100%);
+}
 
 ul {
     list-style-type: none;
     margin: 0 25px;
-    margin-top: 50px;
     padding: 0;
     width: 120%;
 }
- 
+
 ul li {
     margin: 10px 0;
     padding-top: 15px;
@@ -74,11 +49,10 @@ ul li {
 
 .course__title {
     color: #4D4D4D;
-    font-family: 'Lato';
+    font-family: Lato;
     font-size: 16px;
 }
 
-//
 
 
 .course__description {
@@ -94,13 +68,15 @@ ul li {
     line-height: 22px;
 }
 
-
-
-.show-content {
-    display: block;
+.slot__course {
+    background-color: white;
+    color: black;
 }
 
-.hide-content {
-    display: none;
+.slot__empty {
+    opacity: 0.75;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-style: dashed;
+    color: white;
 }
-
